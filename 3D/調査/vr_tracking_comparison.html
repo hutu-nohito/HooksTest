@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VRヘッドセット非依存の全身トラッキング機材の比較調査</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .nav-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+        }
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+        }
+        .intro {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .comparison-table {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .product-section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .pros-cons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        .pros, .cons {
+            padding: 15px;
+            border-radius: 5px;
+        }
+        .pros {
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+        }
+        .cons {
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+        }
+        .pros h4, .cons h4 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        ul {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin: 5px 0;
+        }
+        .note {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        @media (max-width: 768px) {
+            .pros-cons {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="../../index.html" class="nav-link">← ホームに戻る</a>
+    
+    <h1>VRヘッドセット非依存の全身トラッキング機材の比較調査</h1>
+    
+    <div class="intro">
+        <p>VRChat等のアプリケーションで全身トラッキングを実現するための、VRヘッドセットに依存しない機材について調査・比較しました。</p>
+        <p><strong>調査日</strong>: 2025年1月</p>
+    </div>
+
+    <h2>比較表</h2>
+    <div class="comparison-table">
+        <table>
+            <tr>
+                <th>製品名</th>
+                <th>メーカー</th>
+                <th>価格帯</th>
+                <th>トラッキング方式</th>
+                <th>対応部位</th>
+                <th>精度</th>
+                <th>セットアップ難易度</th>
+            </tr>
+            <tr>
+                <td>HaritoraX Wireless</td>
+                <td>Shiftall</td>
+                <td>約3万円</td>
+                <td>IMU（慣性計測）</td>
+                <td>腰・両足</td>
+                <td>★★★☆☆</td>
+                <td>簡単</td>
+            </tr>
+            <tr>
+                <td>SlimeVR</td>
+                <td>SlimeVR（OSS）</td>
+                <td>自作：1-2万円</td>
+                <td>IMU（慣性計測）</td>
+                <td>カスタマイズ可能</td>
+                <td>★★★★☆</td>
+                <td>やや難しい</td>
+            </tr>
+            <tr>
+                <td>VIVE Tracker 3.0</td>
+                <td>HTC</td>
+                <td>約1.5万円/個</td>
+                <td>Lighthouse</td>
+                <td>カスタマイズ可能</td>
+                <td>★★★★★</td>
+                <td>中程度</td>
+            </tr>
+            <tr>
+                <td>mocopi</td>
+                <td>Sony</td>
+                <td>約5万円</td>
+                <td>IMU（慣性計測）</td>
+                <td>全身6点</td>
+                <td>★★★☆☆</td>
+                <td>簡単</td>
+            </tr>
+            <tr>
+                <td>Kinect + Driver4VR</td>
+                <td>Microsoft（旧製品）</td>
+                <td>中古：5千-1万円</td>
+                <td>深度カメラ</td>
+                <td>全身</td>
+                <td>★★☆☆☆</td>
+                <td>中程度</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>各製品の詳細</h2>
+
+    <div class="product-section">
+        <h3>HaritoraX Wireless</h3>
+        <p>日本のShiftall社が開発した、IMUベースのトラッキングシステム。腰と両足の3点トラッキングに特化。</p>
+        <div class="pros-cons">
+            <div class="pros">
+                <h4>メリット</h4>
+                <ul>
+                    <li>セットアップが簡単</li>
+                    <li>ワイヤレスで快適</li>
+                    <li>比較的安価</li>
+                    <li>専用アプリが使いやすい</li>
+                </ul>
+            </div>
+            <div class="cons">
+                <h4>デメリット</h4>
+                <ul>
+                    <li>ドリフトが発生する</li>
+                    <li>3点トラッキングのみ</li>
+                    <li>定期的なキャリブレーションが必要</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-section">
+        <h3>SlimeVR</h3>
+        <p>オープンソースのDIYトラッキングシステム。自作することで低コストで多点トラッキングが可能。</p>
+        <div class="pros-cons">
+            <div class="pros">
+                <h4>メリット</h4>
+                <ul>
+                    <li>カスタマイズ性が高い</li>
+                    <li>コストパフォーマンスが良い</li>
+                    <li>コミュニティが活発</li>
+                    <li>トラッキングポイント数を自由に増やせる</li>
+                </ul>
+            </div>
+            <div class="cons">
+                <h4>デメリット</h4>
+                <ul>
+                    <li>自作の手間がかかる</li>
+                    <li>はんだ付けなどの技術が必要</li>
+                    <li>トラブルシューティングが必要</li>
+                    <li>IMU特有のドリフト問題</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-section">
+        <h3>VIVE Tracker 3.0</h3>
+        <p>HTCのLighthouse方式を採用した高精度トラッカー。SteamVRと完全互換。</p>
+        <div class="pros-cons">
+            <div class="pros">
+                <h4>メリット</h4>
+                <ul>
+                    <li>最高レベルの精度</li>
+                    <li>ドリフトなし</li>
+                    <li>遅延が少ない</li>
+                    <li>プロフェッショナル用途にも対応</li>
+                </ul>
+            </div>
+            <div class="cons">
+                <h4>デメリット</h4>
+                <ul>
+                    <li>高価（ベースステーション含む）</li>
+                    <li>ベースステーションの設置が必要</li>
+                    <li>遮蔽物に弱い</li>
+                    <li>プレイエリアが限定される</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-section">
+        <h3>mocopi</h3>
+        <p>Sonyが開発したモバイル向けモーションキャプチャシステム。スマートフォンと連携して使用。</p>
+        <div class="pros-cons">
+            <div class="pros">
+                <h4>メリット</h4>
+                <ul>
+                    <li>セットアップが非常に簡単</li>
+                    <li>6点フルトラッキング</li>
+                    <li>軽量・コンパクト</li>
+                    <li>モバイルアプリ対応</li>
+                </ul>
+            </div>
+            <div class="cons">
+                <h4>デメリット</h4>
+                <ul>
+                    <li>PC VRとの連携に制限</li>
+                    <li>精度は中程度</li>
+                    <li>バッテリー持続時間</li>
+                    <li>サードパーティ対応が限定的</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-section">
+        <h3>Kinect + Driver4VR</h3>
+        <p>Microsoft Kinectを使用した深度カメラベースのトラッキング。既に生産終了だが中古市場で入手可能。</p>
+        <div class="pros-cons">
+            <div class="pros">
+                <h4>メリット</h4>
+                <ul>
+                    <li>非常に安価（中古）</li>
+                    <li>装着物不要</li>
+                    <li>全身をカバー</li>
+                    <li>複数人の同時トラッキング可能</li>
+                </ul>
+            </div>
+            <div class="cons">
+                <h4>デメリット</h4>
+                <ul>
+                    <li>精度が低い</li>
+                    <li>遅延が大きい</li>
+                    <li>照明条件に左右される</li>
+                    <li>サポート終了製品</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <h2>選び方のポイント</h2>
+    <div class="note">
+        <h3>用途別おすすめ</h3>
+        <ul>
+            <li><strong>初心者・手軽に始めたい</strong>: HaritoraX Wireless または mocopi</li>
+            <li><strong>高精度・プロ用途</strong>: VIVE Tracker 3.0</li>
+            <li><strong>DIY好き・コスパ重視</strong>: SlimeVR</li>
+            <li><strong>予算が限られている</strong>: Kinect（中古）</li>
+        </ul>
+    </div>
+
+    <h2>まとめ</h2>
+    <div class="intro">
+        <p>VRヘッドセット非依存の全身トラッキング機材は、それぞれ特徴が異なります。</p>
+        <ul>
+            <li>精度を求めるならLighthouse方式のVIVE Tracker</li>
+            <li>手軽さを求めるならIMU方式のHaritoraXやmocopi</li>
+            <li>コスパと拡張性を求めるならSlimeVR</li>
+        </ul>
+        <p>自分の用途、予算、技術レベルに合わせて選択することが重要です。</p>
+    </div>
+
+    <div class="footer">
+        <p>最終更新: 2025年1月6日</p>
+    </div>
+</body>
+</html>
