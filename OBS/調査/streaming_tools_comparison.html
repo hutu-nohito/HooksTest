@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>配信ツール・サービスの比較調査</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .nav-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+        }
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+        }
+        .intro {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .section-header {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 30px 0 20px 0;
+            border-left: 5px solid #3498db;
+        }
+        .comparison-table {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .tool-section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .tool-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .tool-number {
+            background-color: #3498db;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .feature-item {
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        .feature-label {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .price-free {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .price-paid {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .support-yes {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .support-no {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .links {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f0f8ff;
+            border-radius: 5px;
+        }
+        .links h4 {
+            margin-top: 0;
+            color: #1976d2;
+        }
+        .links ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .links a {
+            color: #3498db;
+            text-decoration: none;
+            word-break: break-all;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+        .note {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        .castcraft-section {
+            background-color: #f0f8ff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 2px solid #3498db;
+        }
+        @media (max-width: 768px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="../../index.html" class="nav-link">← ホームに戻る</a>
+    
+    <h1>配信ツール・サービスの比較調査</h1>
+    
+    <div class="intro">
+        <p>配信画面を魅力的にするツールとサービスについて調査しました。視聴者をミニキャラ化して画面に表示するツールと、CastCraftのような配信画面作成サービスを比較します。</p>
+        <p><strong>調査日</strong>: 2025年1月</p>
+    </div>
+
+    <div class="section-header">
+        <h2>Part 1: 視聴者ミニキャラ化ツールの比較</h2>
+        <p>視聴者それぞれをミニキャラ化して画面に歩かせる／動かすツールの調査結果</p>
+    </div>
+
+    <div class="comparison-table">
+        <table>
+            <tr>
+                <th>ツール名</th>
+                <th>価格</th>
+                <th>YouTube対応</th>
+                <th>日本語UI</th>
+                <th>特徴</th>
+            </tr>
+            <tr>
+                <td>Stream Avatars</td>
+                <td class="price-paid">買い切り ¥1,180前後</td>
+                <td class="support-yes">◎</td>
+                <td class="support-no">✕</td>
+                <td>ドット風アバター、多彩なミニゲーム</td>
+            </tr>
+            <tr>
+                <td>Stream Buddies</td>
+                <td class="price-paid">有料 $10〜30</td>
+                <td class="support-yes">◎</td>
+                <td class="support-no">✕</td>
+                <td>チビキャラが画面下を歩く</td>
+            </tr>
+            <tr>
+                <td>Pixel Chat</td>
+                <td class="price-free">基本無料</td>
+                <td class="support-yes">◎</td>
+                <td class="support-no">✕</td>
+                <td>チャット装飾、視聴者アイコン表示</td>
+            </tr>
+            <tr>
+                <td>Mix It Up</td>
+                <td class="price-free">無料（寄付制）</td>
+                <td class="support-yes">◎</td>
+                <td class="support-no">✕</td>
+                <td>高い自由度、スクリプトカスタマイズ</td>
+            </tr>
+        </table>
+    </div>
+
+    <h3>各ツールの詳細</h3>
+
+    <div class="tool-section">
+        <div class="tool-header">
+            <div class="tool-number">1</div>
+            <h3>Stream Avatars</h3>
+        </div>
+        <p><strong>方式・特徴</strong>: Steamアプリ。視聴者をドット風アバターで表示し、チャットコマンドで移動・バトロワ・ボス戦など多彩なミニゲームが可能。OBSにはブラウザソースで取り込み。</p>
+        <div class="features">
+            <div class="feature-item">
+                <span class="feature-label">YouTube対応:</span> <span class="support-yes">◎</span> 公式にマルチプラットフォーム対応
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">価格:</span> <span class="price-paid">買い切り ¥1,180前後</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">日本語UI:</span> <span class="support-no">✕</span> 英語
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">特徴:</span> ワークショップでアバター追加可
+            </div>
+        </div>
+        <p><strong>メモ</strong>: 日本語解説記事が豊富なので運用は比較的楽</p>
+        <div class="links">
+            <h4>参考リンク</h4>
+            <ul>
+                <li><a href="https://www.streamavatars.com/" target="_blank">https://www.streamavatars.com/</a></li>
+                <li><a href="https://castcraft.live/blog/95/?utm_source=chatgpt.com" target="_blank">https://castcraft.live/blog/95/?utm_source=chatgpt.com</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tool-section">
+        <div class="tool-header">
+            <div class="tool-number">2</div>
+            <h3>Stream Buddies / PP Widget（StreamElementsカスタムウィジェット）</h3>
+        </div>
+        <p><strong>方式・特徴</strong>: ブラウザ完結型。各チャット参加者にランダム帽子付きのチビキャラを生成して画面下を歩かせる。チャット／スパチャで踊る・整列などのアクションも可能。</p>
+        <div class="features">
+            <div class="feature-item">
+                <span class="feature-label">YouTube対応:</span> <span class="support-yes">◎</span> Twitch & YouTube明記
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">価格:</span> <span class="price-paid">有料 $10〜30程度</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">日本語UI:</span> <span class="support-no">✕</span> 英語
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">特徴:</span> StreamElementsアカウントとOBSブラウザソース対応
+            </div>
+        </div>
+        <p><strong>メモ</strong>: CSSで日本語フォント差し替えも可能</p>
+        <div class="links">
+            <h4>参考リンク</h4>
+            <ul>
+                <li><a href="https://www.etsy.com/listing/1757779821/stream-buddies-twitch-widget-stream" target="_blank">https://www.etsy.com/listing/1757779821/stream-buddies-twitch-widget-stream</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tool-section">
+        <div class="tool-header">
+            <div class="tool-number">3</div>
+            <h3>Pixel Chat "Chat Overlay"</h3>
+        </div>
+        <p><strong>方式・特徴</strong>: チャット欄を可愛く装飾するオーバーレイ。吹き出し内に視聴者アイコン（YouTubeのプロフィール画像）を自動表示できる。歩き回りはしないが"誰が話しているか"を視覚化。</p>
+        <div class="features">
+            <div class="feature-item">
+                <span class="feature-label">YouTube対応:</span> <span class="support-yes">◎</span> ログイン連携不要
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">価格:</span> <span class="price-free">基本無料</span>／Pro $4.99月
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">日本語UI:</span> <span class="support-no">✕</span> 英語
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">特徴:</span> "Emote Particles"と併用で絵文字演出
+            </div>
+        </div>
+        <p><strong>メモ</strong>: YouTubeのポップアウトURLにも対応</p>
+        <div class="links">
+            <h4>参考リンク</h4>
+            <ul>
+                <li>pixelchat.tv（公式サイト）</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tool-section">
+        <div class="tool-header">
+            <div class="tool-number">4</div>
+            <h3>Mix It Up + 独自オーバーレイ</h3>
+        </div>
+        <p><strong>方式・特徴</strong>: デスクトップBOT。YouTube対応済みで、ユーザーのアイコン画像を取り込んでオーバーレイに動的表示するスクリプトが組める。Stream Avatars連携ボタンも内蔵。</p>
+        <div class="features">
+            <div class="feature-item">
+                <span class="feature-label">YouTube対応:</span> <span class="support-yes">◎</span> 公式対応
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">価格:</span> <span class="price-free">無料（寄付制）</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">日本語UI:</span> <span class="support-no">✕</span> 英語
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">特徴:</span> 最も高い自由度
+            </div>
+        </div>
+        <p><strong>メモ</strong>: 視聴者アイコンを好きな位置にスポーン→フェードアウト等をJSONで制御可能。自作スクリプトが必要だが自由度は最も高い。</p>
+        <div class="links">
+            <h4>参考リンク</h4>
+            <ul>
+                <li><a href="https://mixitupapp.com/" target="_blank">https://mixitupapp.com/</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section-header">
+        <h2>Part 2: CastCraftと同等の配信画面作成サービス</h2>
+        <p>配信画面をより魅力的にするサービスの比較</p>
+    </div>
+
+    <div class="castcraft-section">
+        <h3>CastCraftについて</h3>
+        <p>CastCraftは、配信画面を簡単にカスタマイズできる日本製のサービスです。以下のような特徴があります：</p>
+        <ul>
+            <li>配信画面のレイアウトを直感的に編集</li>
+            <li>アラート、チャット表示、ウィジェットなどの豊富な機能</li>
+            <li>日本語完全対応</li>
+            <li>YouTube/Twitch対応</li>
+        </ul>
+    </div>
+
+    <div class="note">
+        <h3>同等サービスの候補</h3>
+        <p>CastCraftと同様の機能を持つサービスとして、以下が挙げられます：</p>
+        <ul>
+            <li><strong>Streamlabs</strong> - 最も人気のある配信支援ツール</li>
+            <li><strong>StreamElements</strong> - プロフェッショナル向けの高機能ツール</li>
+            <li><strong>OBS Studio</strong> + プラグイン - 無料でカスタマイズ性が高い</li>
+            <li><strong>Lightstream</strong> - ブラウザベースの配信ツール</li>
+        </ul>
+    </div>
+
+    <h2>まとめ</h2>
+    <div class="intro">
+        <h3>視聴者ミニキャラ化ツールの選び方</h3>
+        <ul>
+            <li><strong>手軽さ重視</strong>: Stream Avatars（日本語解説多数）</li>
+            <li><strong>コスパ重視</strong>: Pixel Chat（基本無料）</li>
+            <li><strong>カスタマイズ重視</strong>: Mix It Up（自由度最高）</li>
+            <li><strong>見た目重視</strong>: Stream Buddies（可愛いチビキャラ）</li>
+        </ul>
+        
+        <h3>配信画面作成サービスの選び方</h3>
+        <ul>
+            <li><strong>日本語対応重視</strong>: CastCraft</li>
+            <li><strong>機能の豊富さ</strong>: StreamElements</li>
+            <li><strong>初心者向け</strong>: Streamlabs</li>
+            <li><strong>無料でカスタマイズ</strong>: OBS Studio + プラグイン</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p>最終更新: 2025年1月6日</p>
+    </div>
+</body>
+</html>
