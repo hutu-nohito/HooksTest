@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>バーチャルイベント向け3Dワールド作成ツールの比較調査</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .nav-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 40px;
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+        }
+        h3 {
+            color: #34495e;
+            margin-top: 25px;
+        }
+        .intro {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .criteria {
+            background-color: #e3f2fd;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            border-left: 4px solid #2196f3;
+        }
+        .criteria h3 {
+            margin-top: 0;
+            color: #1976d2;
+        }
+        .comparison-table {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        .tool-section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .tool-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .tool-number {
+            background-color: #3498db;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .feature-item {
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        .feature-label {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        .price-free {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .links {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #f0f8ff;
+            border-radius: 5px;
+        }
+        .links h4 {
+            margin-top: 0;
+            color: #1976d2;
+        }
+        .links ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .links a {
+            color: #3498db;
+            text-decoration: none;
+            word-break: break-all;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+        .recommendation {
+            background-color: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .recommendation h3 {
+            margin-top: 0;
+            color: #856404;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #666;
+            font-size: 0.9em;
+        }
+        @media (max-width: 768px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="../../index.html" class="nav-link">← ホームに戻る</a>
+    
+    <h1>バーチャルイベント向け3Dワールド作成ツールの比較調査</h1>
+    
+    <div class="intro">
+        <p>バーチャルイベントやメタバース空間を構築するための3Dワールド作成ツールについて、6つの主要なプラットフォームを調査・比較しました。</p>
+        <p><strong>調査日</strong>: 2025年1月</p>
+    </div>
+
+    <div class="criteria">
+        <h3>選定条件</h3>
+        <ul>
+            <li>複数人で共同編集可能</li>
+            <li>高い自由度（テクスチャ・マテリアル編集可）</li>
+            <li>外部3Dモデルのインポート対応（FBX、GLTF等）</li>
+            <li>Windows対応</li>
+            <li>予算5万円以内</li>
+        </ul>
+    </div>
+
+    <h2>比較一覧表</h2>
+    <div class="comparison-table">
+        <table>
+            <tr>
+                <th>ツール名</th>
+                <th>価格</th>
+                <th>共同編集</th>
+                <th>3Dモデル対応</th>
+                <th>初心者適性</th>
+                <th>商用利用</th>
+            </tr>
+            <tr>
+                <td>cluster</td>
+                <td class="price-free">無料</td>
+                <td>リアルタイム可</td>
+                <td>FBX, glTF</td>
+                <td>★★★★☆</td>
+                <td>可能</td>
+            </tr>
+            <tr>
+                <td>VRChat</td>
+                <td class="price-free">無料</td>
+                <td>プロジェクト共有</td>
+                <td>FBX等</td>
+                <td>★★★☆☆</td>
+                <td>可能</td>
+            </tr>
+            <tr>
+                <td>Neos VR</td>
+                <td class="price-free">無料</td>
+                <td>VR内で同時編集</td>
+                <td>FBX, glTF, OBJ</td>
+                <td>★★☆☆☆</td>
+                <td>可能</td>
+            </tr>
+            <tr>
+                <td>UEFN</td>
+                <td class="price-free">無料</td>
+                <td>リアルタイム可</td>
+                <td>FBX</td>
+                <td>★★★☆☆</td>
+                <td>可能</td>
+            </tr>
+            <tr>
+                <td>Roblox Studio</td>
+                <td class="price-free">無料</td>
+                <td>Team Create</td>
+                <td>FBXメッシュ</td>
+                <td>★★★★★</td>
+                <td>可能</td>
+            </tr>
+            <tr>
+                <td>FRAME</td>
+                <td class="price-free">基本無料</td>
+                <td>リアルタイム可</td>
+                <td>3Dモデル対応</td>
+                <td>★★★★★</td>
+                <td>可能</td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>各ツールの詳細</h2>
+
+    <div class="tool-section">
+        <div class="tool-header">
+            <div class="tool-number">1</div>
+            <h3>cluster（クラスター）</h3>
+        </div>
+        <p>日本発のメタバースプラットフォーム。国内最大級で累計DL100万、動員数2000万超の実績。</p>
+        <div class="features">
+            <div class="feature-item">
+                <span class="feature-label">共同編集:</span> 公式の簡易ワールドクラフト機能でリアルタイム共同編集対応
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">3Dモデル対応:</span> Unity経由でFBX、glTF形式のインポート可能
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">価格:</span> <span class="price-free">無料</span>（Unity個人利用も無料）
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">初心者適性:</span> ワールドクラフト機能は初心者向け、Unity開発は経験必要
+            </div>
+        </div>
+        <div class="links">
+            <h4>参考リンク</h4>
+            <ul>
+                <li><a href="https://jp.vcube.com/sdk/blog/cluster_interview" target="_blank">https://jp.vcube.com/sdk/blog/cluster_interview</a></li>
+                <li><a href="https://okini.bookmarks.jp/wp5/?p=8253" target="_blank">https://okini.bookmarks.jp/wp5/?p=8253</a></li>
+                <li><a href="https://creator.cluster.mu/2022/09/30/screen-model/" target="_blank">https://creator.cluster.mu/2022/09/30/screen-model/</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tool-section">
+        <div class="tool-header">
+            <div class="tool-number">2</div>
+            <h3>VRChat（ブイアールチャット）</h3>
+        </div>
+        <p>世界最大のソーシャルVRプラットフォーム。日本人ユーザー50万人規模。</p>
+        <div class="features">
+            <div class="feature-item">
+                <span class="feature-label">共同編集:</span> Unityプロジェクトをチームで共有（同時編集は不可）
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">3Dモデル対応:</span> Unity経由でFBX形式など対応
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">価格:</span> <span class="price-free">無料</span>（VRChat Plus月額約¥1,200は任意）
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">初心者適性:</span> 中級者向け（Unity基礎知識必要）
+            </div>
+        </div>
+        <div class="links">
+            <h4>参考リンク</h4>
+            <ul>
+                <li><a href="https://vr-lifemagazine.com/bestat_kuramoto-world/" target="_blank">https://vr-lifemagazine.com/bestat_kuramoto-world/</a></li>
+                <li><a href="https://metaversesouken.com/metaverse/platform-japan/" target="_blank">https://metaversesouken.com/metaverse/platform-japan/</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tool-section">
+        <div class="tool-header">
+            <div class="tool-number">3</div>
+            <h3>Neos VR（ネオスVR）</h3>
+        </div>
+        <p>高度にカスタマイズ可能な次世代型ソーシャルVR。VR内で直接編集が可能。</p>
+        <div class="features">
+            <div class="feature-item">
+                <span class="feature-label">共同編集:</span> VR内で複数人が同時編集可能
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">3Dモデル対応:</span> FBX、glTF、OBJ等を直接インポート
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">価格:</span> <span class="price-free">無料</span>（Steamで配布）
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">初心者適性:</span> 上級者向け（VR操作の習熟必要）
+            </div>
+        </div>
+        <div class="links">
+            <h4>参考リンク</h4>
+            <ul>
+                <li><a href="https://uefn-metaverse.jp/neosvr_start/" target="_blank">https://uefn-metaverse.jp/neosvr_start/</a></li>
+                <li><a href="https://steamcommunity.com/app/740250/discussions/0/3458219850112646606/" target="_blank">https://steamcommunity.com/app/740250/discussions/0/3458219850112646606/</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tool-section">
+        <div class="tool-header">
+            <div class="tool-number">4</div>
+            <h3>Unreal Editor for Fortnite (UEFN)</h3>
+        </div>
+        <p>Epic Games社提供。フォートナイト内で動作するコンテンツ制作ツール。</p>
+        <div class="features">
+            <div class="feature-item">
+                <span class="feature-label">共同編集:</span> チームで島をリアルタイム共同編集可能
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">3Dモデル対応:</span> FBX形式対応（一部glTFも可）
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">価格:</span> <span class="price-free">無料</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">初心者適性:</span> 中級者向け（Unreal基礎必要）
+            </div>
+        </div>
+        <div class="links">
+            <h4>参考リンク</h4>
+            <ul>
+                <li><a href="https://gamemakers.jp/article/2023_04_06_35870/" target="_blank">https://gamemakers.jp/article/2023_04_06_35870/</a></li>
+                <li><a href="https://dev.epicgames.com/documentation/en-us/uefn/importing-assets-in-unreal-editor-for-fortnite" target="_blank">https://dev.epicgames.com/documentation/en-us/uefn/importing-assets-in-unreal-editor-for-fortnite</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tool-section">
+        <div class="tool-header">
+            <div class="tool-number">5</div>
+            <h3>Roblox Studio（ロブロックス スタジオ）</h3>
+        </div>
+        <p>世界的なUGCプラットフォーム。Team Createで同時編集が可能。</p>
+        <div class="features">
+            <div class="feature-item">
+                <span class="feature-label">共同編集:</span> 複数人が同じ空間をリアルタイムに共同編集
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">3Dモデル対応:</span> FBXメッシュ対応
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">価格:</span> <span class="price-free">無料</span>
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">初心者適性:</span> 初心者向け（小学生でも扱える）
+            </div>
+        </div>
+        <div class="links">
+            <h4>参考リンク</h4>
+            <ul>
+                <li><a href="https://nocodo.net/media/media-3402/" target="_blank">https://nocodo.net/media/media-3402/</a></li>
+                <li><a href="https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q12295054172" target="_blank">https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q12295054172</a></li>
+                <li><a href="https://devforum.roblox.com/t/how-to-import-fbx-and-obj-with-materials/1413624" target="_blank">https://devforum.roblox.com/t/how-to-import-fbx-and-obj-with-materials/1413624</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="tool-section">
+        <div class="tool-header">
+            <div class="tool-number">6</div>
+            <h3>FRAME（フレーム）</h3>
+        </div>
+        <p>ブラウザベースの3Dコラボレーションプラットフォーム。インストール不要。</p>
+        <div class="features">
+            <div class="feature-item">
+                <span class="feature-label">共同編集:</span> リアルタイムで共同編集可能
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">3Dモデル対応:</span> 3Dモデルアップロード可能、Sketchfab連携
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">価格:</span> <span class="price-free">基本無料</span>（有料プラン：月額$10～$200）
+            </div>
+            <div class="feature-item">
+                <span class="feature-label">初心者適性:</span> 非常に高い（ノーコード、ドラッグ&ドロップ）
+            </div>
+        </div>
+        <div class="links">
+            <h4>参考リンク</h4>
+            <ul>
+                <li><a href="https://learn.framevr.io/features" target="_blank">https://learn.framevr.io/features</a></li>
+                <li><a href="https://learn.framevr.io/pricing" target="_blank">https://learn.framevr.io/pricing</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>用途別おすすめ</h2>
+    <div class="recommendation">
+        <h3>シーン別の選択ガイド</h3>
+        <ul>
+            <li><strong>手軽さ重視</strong>: FRAME、cluster</li>
+            <li><strong>凝った演出</strong>: UEFN、VRChat</li>
+            <li><strong>協働制作</strong>: Neos VR、UEFN</li>
+            <li><strong>ゲーム性</strong>: Roblox</li>
+            <li><strong>国内企業案件</strong>: cluster</li>
+            <li><strong>グローバル展開</strong>: VRChat</li>
+        </ul>
+    </div>
+
+    <h2>まとめ</h2>
+    <div class="intro">
+        <p>全てのツールが<strong>予算5万円以内</strong>（実質無料）で利用可能です。</p>
+        <p>選定にあたっては、以下の要素を考慮することが重要です：</p>
+        <ul>
+            <li>イベントの規模・目的</li>
+            <li>参加対象（国内/海外、年齢層）</li>
+            <li>制作チームのスキルレベル</li>
+            <li>必要な機能（VR対応、ゲーム要素など）</li>
+        </ul>
+        <p>初心者には<strong>FRAME</strong>や<strong>cluster</strong>のワールドクラフト機能、経験者には<strong>VRChat</strong>や<strong>UEFN</strong>がおすすめです。</p>
+    </div>
+
+    <div class="footer">
+        <p>最終更新: 2025年1月6日</p>
+    </div>
+</body>
+</html>
