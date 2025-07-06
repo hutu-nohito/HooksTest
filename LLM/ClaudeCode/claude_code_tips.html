@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claude Code Tips Collection</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            border-left: 4px solid #3498db;
+            padding-left: 10px;
+        }
+        pre {
+            background-color: #1e1e1e;
+            color: #d4d4d4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            background-color: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+        }
+        pre code {
+            background-color: transparent;
+            padding: 0;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 15px 0;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        th, td {
+            text-align: left;
+            padding: 12px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 30px;
+        }
+        li {
+            margin: 5px 0;
+        }
+        strong {
+            color: #2c3e50;
+        }
+        blockquote {
+            border-left: 4px solid #3498db;
+            padding-left: 15px;
+            margin: 15px 0;
+            color: #555;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>Claude Code Tips Collection</h1>
+
+    <h2>1. ファイル検索 &amp; 読み込み</h2>
+    <ul>
+        <li><strong>Read (内蔵) vs ripgrep vs cat vs readarray</strong>
+            <ul>
+                <li><code>Read</code>: 単一ファイルを素早く閲覧するときに便利。</li>
+                <li><code>ripgrep (rg)</code>: ディレクトリ横断検索。正規表現で高速。</li>
+                <li><code>cat</code>: ファイル全体をパイプラインに流す。<code>cat foo | head -n 20</code> など。</li>
+                <li><code>readarray</code>: シェル配列に行単位で読み込むときに使う。</li>
+                <li>これらを組み合わせれば <strong>内蔵 Search を使わなくても済む</strong>。</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h2>2. 出力の保存 &amp; ログ</h2>
+    <ul>
+        <li><strong>tee で同時に表示＆保存</strong>
+            <pre><code>rg "keyword" | tee findings.txt | head -5
+cat data | tee backup.txt | awk '{print $2}'</code></pre>
+            実行結果を画面に出しつつファイルに残せるので、後から経緯を追いやすくデバッグにも役立つ。
+        </li>
+    </ul>
+
+    <h2>3. キーボードショートカット</h2>
+    <table>
+        <tr>
+            <th>操作</th>
+            <th>ショートカット</th>
+        </tr>
+        <tr>
+            <td>改行を入力</td>
+            <td><strong>Ctrl + j</strong></td>
+        </tr>
+        <tr>
+            <td>クリップボード画像を貼り付け</td>
+            <td><strong>Ctrl + v</strong></td>
+        </tr>
+        <tr>
+            <td>任意ファイルを添付</td>
+            <td><code>@\path\to\file</code></td>
+        </tr>
+    </table>
+
+    <h2>4. Git や各種プロンプトの自動承認</h2>
+    <ul>
+        <li>ターミナルを張り付かずに済む方法:
+            <ol>
+                <li><strong>Shift + Tab</strong> で <em>Auto‑Accept</em> を有効化。</li>
+                <li>質問が来たら <code>123</code> の <strong>2</strong> を返して承認。</li>
+            </ol>
+        </li>
+        <li>より確実に行うなら <strong>settings ファイル</strong> でパーミッションを事前に設定する。</li>
+    </ul>
+
+    <h2>5. MCP &amp; 拡張機能</h2>
+    <ul>
+        <li><strong>claude mcp add-from-claude-desktop</strong><br>
+            Claude Desktop の <em>mcp</em> 設定をワンコマンドで Claude Code に取り込める。
+        </li>
+    </ul>
+
+    <h2>6. 通知 &amp; アラート</h2>
+    <ul>
+        <li><strong>作業完了時に端末ベルを鳴らす</strong>
+            <pre><code>claude config set --global preferredNotifChannel terminal_bell</code></pre>
+            もし鳴らない場合は VS Code 設定 (<code>accessibility.signals.terminalBell</code>) で <code>sound</code> を <strong>on</strong> にする。
+        </li>
+    </ul>
+
+    <h2>7. フック &amp; タイムアウト（v1.0.41 以降）</h2>
+    <table>
+        <tr>
+            <th>機能</th>
+            <th>説明</th>
+        </tr>
+        <tr>
+            <td><strong>Stop / SubagentStop</strong></td>
+            <td><code>Stop</code> が分割され、① Claude の応答終了時、② サブエージェント(タスクツール)終了時を個別に捕捉可能。</td>
+        </tr>
+        <tr>
+            <td><strong>BASH_MAX_TIMEOUT_MS</strong></td>
+            <td>各コマンドにミリ秒単位のタイムアウト。デフォルト 60 000 ms。</td>
+        </tr>
+        <tr>
+            <td><strong>hook_event_name</strong></td>
+            <td>Hook Input の JSON に追加。イベント名でハンドリングしやすく。</td>
+        </tr>
+        <tr>
+            <td><strong>その他</strong></td>
+            <td>MCP 重複表示バグの修正、<code>tool_decision</code> イベントに Bash パラメータ付与。</td>
+        </tr>
+    </table>
+
+    <h2>8. アップデート運用</h2>
+    <ul>
+        <li><code>claude update</code> で反映されないケースがある。</li>
+        <li><strong>確実なのは</strong>
+            <pre><code>npm install -g anthropic-ai/claude-code</code></pre>
+            を実行して最新版をインストールし直すこと。
+        </li>
+    </ul>
+
+    <h2>9. プロンプト &amp; ガイダンス</h2>
+    <ul>
+        <li><strong>安定動作する指示例</strong>
+            <blockquote>「主要クラスの冒頭に、設計ドキュメントへの参照と、関連クラスのメモを、コメントとしてつけてください。」</blockquote>
+        </li>
+    </ul>
+
+    <h2>10. 設定ファイル Tweaks (<code>~/.claude/settings.json</code>)</h2>
+    <table>
+        <tr>
+            <th>キー例</th>
+            <th>役割</th>
+        </tr>
+        <tr>
+            <td><code>MAX_THINKING_TOKENS</code></td>
+            <td>常時 <strong>拡張思考 (ultrathink)</strong> モードを有効化。トリガー語の入力が不要になる。</td>
+        </tr>
+        <tr>
+            <td><code>"permissions": { "defaultMode": "acceptEdits" }</code></td>
+            <td>起動時から <strong>Auto‑Accept Edits</strong> モードに入る。</td>
+        </tr>
+        <tr>
+            <td><code>bypassPermissions: true</code></td>
+            <td><code>--dangerously-skip-permissions</code> 相当でパーミッション確認をスキップ。</td>
+        </tr>
+    </table>
+
+    <h2>11. フック応用例</h2>
+    <ul>
+        <li><strong>停止時に効果音を鳴らす</strong>
+            <pre><code># ~/.claude/hooks/stop
+afplay /System/Library/Sounds/Glass.aiff</code></pre>
+            タスク完了が耳で分かるので集中を切らさない。
+        </li>
+    </ul>
+
+    <h2>12. カスタム Slash Command &amp; ワークフロー</h2>
+    <ul>
+        <li><strong>独自 Slash コマンド</strong>: <code>.claude/commands/</code> に <code>.md</code> を置くだけで定義できる。</li>
+        <li><strong>スライド資料を自動生成</strong>
+            <ol>
+                <li>Markdown で原稿を書く</li>
+                <li><code>.md</code> → <strong>YAML</strong> へ変換（構造化）</li>
+                <li><strong>YAML</strong> → <strong>HTML</strong> でスライド化</li>
+                <li><strong>HTML</strong> → <strong>PDF</strong> 出力</li>
+            </ol>
+            <strong>利点</strong>: md 資産の活用、GitHub に配置、CSS 一括調整、再利用可能なコマンドなど。
+        </li>
+    </ul>
+
+    <h2>13. 運用ルールを <code>.md</code> にまとめて共有</h2>
+    <ul>
+        <li>プロジェクト直下に <strong><code>CLAUDE.md</code></strong> を置き、AI 運用ポリシー（例: <strong>AI運用5原則</strong>）を明文化。<br>
+            チーム全体で合意しておくとミスや誤解を防げる。
+        </li>
+    </ul>
+</body>
+</html>
