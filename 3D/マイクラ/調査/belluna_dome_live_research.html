@@ -40,6 +40,10 @@
             color: #34495e;
             margin-top: 25px;
         }
+        h4 {
+            color: #34495e;
+            margin-top: 20px;
+        }
         .intro {
             background-color: white;
             padding: 20px;
@@ -67,6 +71,11 @@
             background-color: #f8f9fa;
             border-radius: 5px;
         }
+        .artist-name {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.1em;
+        }
         .stage-info {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -89,6 +98,31 @@
             background-color: #fff3cd;
             border: 1px solid #ffeaa7;
             border-radius: 5px;
+        }
+        .performance-category {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .category-header {
+            background-color: #f0f8ff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            border-left: 5px solid #2196f3;
+        }
+        .performance-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .performance-list li {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            border-left: 3px solid #3498db;
         }
         .minecraft-application {
             background-color: #e8f4f8;
@@ -131,12 +165,12 @@
             border-left: 3px solid #3498db;
         }
         .source-info {
-            background-color: #f8d7da;
-            border: 1px solid #f5c6cb;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
             border-radius: 5px;
             padding: 15px;
             margin: 20px 0;
-            color: #721c24;
+            color: #155724;
         }
         .footer {
             text-align: center;
@@ -144,6 +178,15 @@
             padding: 20px;
             color: #666;
             font-size: 0.9em;
+        }
+        .effect-tag {
+            display: inline-block;
+            background-color: #e3f2fd;
+            color: #1976d2;
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.9em;
+            margin: 2px;
         }
         @media (max-width: 768px) {
             .stage-info, .minecraft-tips {
@@ -159,107 +202,226 @@
     
     <div class="intro">
         <p>ベルーナドーム（埼玉県所沢市）で過去5年間に開催された男性アイドルグループのライブ演出を調査・分析しました。マインクラフト配布マップ制作の参考資料として、ステージ構成や特殊効果などをまとめています。</p>
-        <p><strong>調査期間</strong>: 2019年〜2024年</p>
+        <p><strong>調査期間</strong>: 2019年〜2025年</p>
         <p><strong>調査目的</strong>: マインクラフトでのライブ会場再現のための演出パターン分析</p>
     </div>
 
     <div class="source-info">
-        <h3>⚠️ データソースについて</h3>
-        <p>元のPDFファイルが読み取れなかったため、一般的な知識に基づいて代表的なライブ演出パターンをまとめています。実際のPDFに含まれていた詳細情報やリンクは反映されていない可能性があります。</p>
+        <h3>✅ データソース</h3>
+        <p>本ページは実際のライブレポートやX（旧Twitter）上の参加者レポートを基に作成されています。</p>
     </div>
 
-    <h2>年度別ライブ演出まとめ</h2>
+    <h2>年度別ライブ公演まとめ</h2>
 
     <div class="year-section">
         <div class="year-header">
-            <h3>2023-2024年の主要公演</h3>
+            <h3>2024-2025年の主要公演</h3>
         </div>
         
         <div class="artist-section">
-            <h4>大規模アリーナツアー演出パターン</h4>
-            <div class="stage-info">
-                <div class="info-item">
-                    <span class="info-label">ステージ構成:</span> センターステージ + 花道 + バックステージ
-                </div>
-                <div class="info-item">
-                    <span class="info-label">座席配置:</span> 360度観覧可能な円形配置
-                </div>
-                <div class="info-item">
-                    <span class="info-label">収容人数:</span> 約30,000人（ライブ仕様）
-                </div>
-                <div class="info-item">
-                    <span class="info-label">特別演出:</span> ムービングステージ、昇降装置
-                </div>
-            </div>
-            <div class="special-effects">
-                <h5>主な特殊効果</h5>
-                <ul>
-                    <li>レーザー演出（緑・青・赤の3色パターン）</li>
-                    <li>炎柱演出（高さ5-10m）</li>
-                    <li>紙吹雪・銀テープ（フィナーレ）</li>
-                    <li>LED映像演出（天井・床面投影）</li>
-                    <li>ワイヤーアクション（フライング演出）</li>
-                </ul>
-            </div>
+            <p class="artist-name">King & Prince</p>
+            <p><strong>公演名:</strong> 「Re:ERA」ツアー＠ベルーナドーム</p>
+            <ul>
+                <li>トロッコ移動演出を実施</li>
+                <li>「シンデレラガール」で花火・火柱演出</li>
+            </ul>
+        </div>
+
+        <div class="artist-section">
+            <p class="artist-name">いれいす</p>
+            <p><strong>公演名:</strong> 2024 初ドーム公演＠ベルーナドーム</p>
+            <ul>
+                <li>メイン・センター・バックステージの3ステージ構成</li>
+                <li>中央と後方に離れ小島ステージ配置</li>
+            </ul>
         </div>
     </div>
 
     <div class="year-section">
         <div class="year-header">
-            <h3>2021-2022年の主要公演</h3>
+            <h3>2025年の主要公演</h3>
         </div>
         
         <div class="artist-section">
-            <h4>コロナ対策期の演出変更</h4>
-            <div class="stage-info">
-                <div class="info-item">
-                    <span class="info-label">座席制限:</span> 50%〜70%収容
-                </div>
-                <div class="info-item">
-                    <span class="info-label">特別演出:</span> AR演出の導入
-                </div>
-                <div class="info-item">
-                    <span class="info-label">観客参加:</span> ペンライト連動演出
-                </div>
-                <div class="info-item">
-                    <span class="info-label">配信対応:</span> マルチアングル撮影
-                </div>
-            </div>
+            <p class="artist-name">三代目J Soul Brothers</p>
+            <p><strong>公演名:</strong> 「KINGDOM」ツアー＠ベルーナドーム</p>
+            <ul>
+                <li>アンコールで客席からのサプライズ登場</li>
+                <li>「ORION」でのフロートステージ移動</li>
+                <li>オープニングでステージ上に炎の噴出演出</li>
+                <li>ペンライトの無線制御演出（雷鳴と共に赤く光る）</li>
+                <li>「Say Oh!」でのコール＆レスポンス</li>
+            </ul>
         </div>
     </div>
 
     <div class="year-section">
         <div class="year-header">
-            <h3>2019-2020年の主要公演</h3>
+            <h3>2021年の主要公演</h3>
         </div>
         
         <div class="artist-section">
-            <h4>大型セット演出の全盛期</h4>
-            <div class="stage-info">
-                <div class="info-item">
-                    <span class="info-label">巨大セット:</span> 高さ15m級の可動式セット
-                </div>
-                <div class="info-item">
-                    <span class="info-label">水演出:</span> ウォータースクリーン投影
-                </div>
-                <div class="info-item">
-                    <span class="info-label">トロッコ:</span> 2階席まで到達する長距離コース
-                </div>
-                <div class="info-item">
-                    <span class="info-label">映像演出:</span> 360度パノラマ映像
-                </div>
-            </div>
+            <p class="artist-name">ジャニーズフェスティバル2021</p>
+            <p><strong>会場:</strong> 東京ドーム（参考公演）</p>
+            <p><strong>出演グループと演出:</strong></p>
+            <ul>
+                <li><strong>A.B.C-Z・Kis-My-Ft2:</strong> フロートで客席周回、大量のシャボン玉演出</li>
+                <li><strong>NEWS・Hey!Say!JUMP・Sexy Zone:</strong> 観客頭上のムービングステージ</li>
+                <li><strong>各グループ共通:</strong> テーマカラー照明、レーザー演出</li>
+            </ul>
         </div>
+    </div>
+
+    <div class="year-section">
+        <div class="year-header">
+            <h3>その他の注目公演</h3>
+        </div>
+        
+        <div class="artist-section">
+            <p class="artist-name">すとぷり（STPR）</p>
+            <p><strong>公演名:</strong> すとふぇすDay5＠ベルーナドーム</p>
+            <ul>
+                <li>ファンのうちわリクエストに応えるファンサービス</li>
+                <li>「○○と♡作って」等のリクエストに対応</li>
+            </ul>
+        </div>
+    </div>
+
+    <h2>演出パターンの詳細分析</h2>
+
+    <div class="performance-category">
+        <div class="category-header">
+            <h3>演者本人が関与する演出</h3>
+        </div>
+        
+        <h4>ワイヤーアクション（宙づりフライング）</h4>
+        <ul class="performance-list">
+            <li><strong>Johnny's系コンサート:</strong> 「3Dフライング」「4Dフライング」技術</li>
+            <li>複数方向からワイヤーで吊り上げ、会場内を自由に飛び回る</li>
+            <li>観客席上空での演技も可能</li>
+        </ul>
+
+        <h4>トロッコ移動</h4>
+        <ul class="performance-list">
+            <li><strong>King & Prince:</strong> 外周通路をトロッコが巡回</li>
+            <li>メンバーがファンサービスをしながら移動</li>
+            <li>後方席のファンとの距離を縮める効果</li>
+        </ul>
+
+        <h4>客席へのサプライズ登場</h4>
+        <ul class="performance-list">
+            <li><strong>三代目JSB:</strong> アンコールで客席から突然メンバーが出現</li>
+            <li>スタンド通路など観客席から姿を現す演出</li>
+            <li>観客の驚きと興奮を最大化</li>
+        </ul>
+    </div>
+
+    <div class="performance-category">
+        <div class="category-header">
+            <h3>ファンとの距離を縮める演出</h3>
+        </div>
+        
+        <h4>ファンサービス</h4>
+        <ul class="performance-list">
+            <li><strong>すとぷり＠ベルーナドーム:</strong> うちわリクエストへの対応</li>
+            <li>メンバーが個別にファンのリクエストに応える</li>
+            <li>パーソナルな交流の演出</li>
+        </ul>
+
+        <h4>ペンライト演出</h4>
+        <ul class="performance-list">
+            <li><strong>三代目JSB「KINGDOM」ツアー:</strong> 無線制御ペンライト</li>
+            <li>オープニングで雷鳴と共に一斉に赤く光る</li>
+            <li>楽曲に合わせた色の変化で一体感創出</li>
+        </ul>
+
+        <h4>コール＆レスポンス</h4>
+        <ul class="performance-list">
+            <li><strong>三代目JSB:</strong> 「Say Oh!」の掛け合い</li>
+            <li>観客参加型の双方向コミュニケーション</li>
+            <li>会場全体での一体感醸成</li>
+        </ul>
+    </div>
+
+    <div class="performance-category">
+        <div class="category-header">
+            <h3>ステージ構成</h3>
+        </div>
+        
+        <h4>センターステージ・花道</h4>
+        <ul class="performance-list">
+            <li><strong>いれいす:</strong> メイン＋中央＋後方の離れ小島ステージ配置</li>
+            <li>円形や四角形のセンターステージ設置</li>
+            <li>360度どこからでも楽しめる設計</li>
+        </ul>
+
+        <h4>ムービングステージ</h4>
+        <ul class="performance-list">
+            <li><strong>起源:</strong> 2005年嵐（松本潤）考案、初導入</li>
+            <li>透明アクリル製で観客頭上を移動</li>
+            <li><strong>三代目JSB:</strong> フロートステージでアリーナを縦横に移動</li>
+        </ul>
+
+        <h4>外周ステージ・フィールド活用</h4>
+        <ul class="performance-list">
+            <li><strong>ジャニーズフェス2021:</strong> 外周フロートで場内一周</li>
+            <li>ドーム外周に沿った通路やステージの配置</li>
+            <li>会場全体をステージとして活用</li>
+        </ul>
+    </div>
+
+    <div class="performance-category">
+        <div class="category-header">
+            <h3>特効・演出効果</h3>
+        </div>
+        
+        <h4>照明演出</h4>
+        <ul class="performance-list">
+            <li><strong>SixTONES「NAVIGATOR」:</strong> 深紅の照明とレーザー</li>
+            <li><strong>Snow Man「D.D.」:</strong> 白と青のライトで幻想的空間</li>
+            <li>各グループのテーマカラーを活用した演出</li>
+        </ul>
+
+        <h4>炎・火柱（パイロ特効）</h4>
+        <ul class="performance-list">
+            <li><strong>三代目JSB:</strong> オープニングでステージから炎が立ち上がる</li>
+            <li><strong>King & Prince「シンデレラガール」:</strong> 曲の盛り上がりで花火・火柱</li>
+            <li>ベルーナドームの開放的構造を活かした演出</li>
+        </ul>
+
+        <h4>シャボン玉・紙吹雪</h4>
+        <ul class="performance-list">
+            <li><strong>ジャニーズWEST「プリンシパルの君へ」:</strong> スモーク入りシャボン玉</li>
+            <li>クライマックスでの紙吹雪・銀テープ</li>
+            <li><strong>A.B.C-Z＆Kis-My-Ft2:</strong> 大量のシャボン玉演出</li>
+        </ul>
+
+        <h4>その他の特効</h4>
+        <ul class="performance-list">
+            <li><strong>Snow Man:</strong> スモークと雪の演出</li>
+            <li><strong>BE:FIRST:</strong> コラボイルミネーション</li>
+            <li>季節感を出す桜吹雪、雷鳴や風のSE（効果音）</li>
+        </ul>
     </div>
 
     <h2>演出パターンの分析</h2>
     <div class="analysis-section">
         <h3>共通する演出傾向</h3>
         <ul class="trend-list">
-            <li><strong>オープニング</strong>: 暗転からの爆発的な照明・音響でスタート</li>
-            <li><strong>中盤の山場</strong>: メンバーソロパート + 特殊演出（フライング等）</li>
-            <li><strong>アンコール前</strong>: 全体を使った大規模演出（炎・レーザー・映像の複合）</li>
-            <li><strong>フィナーレ</strong>: 銀テープ・紙吹雪 + 全メンバーでのトロッコ巡回</li>
+            <li><strong>観客との距離を縮める演出が主流</strong><br>
+                物理的距離：トロッコ、ムービングステージ、外周活用<br>
+                心理的距離：ファンサービス、サプライズ登場</li>
+            <li><strong>観客参加型演出の重視</strong><br>
+                ペンライト制御による一体感創出<br>
+                コール＆レスポンスでの双方向コミュニケーション</li>
+            <li><strong>五感に訴える総合演出</strong><br>
+                視覚：照明、レーザー、炎、シャボン玉<br>
+                聴覚：音響効果、SE<br>
+                触覚：炎の熱気、振動</li>
+            <li><strong>ベルーナドーム特有の演出</strong><br>
+                壁が無い開放的構造を活かした外周演出<br>
+                野外的環境での火の使用効果<br>
+                夏場は風を感じながらの観覧</li>
         </ul>
     </div>
 
@@ -267,44 +429,132 @@
         <h2>マインクラフト配布マップ制作への応用</h2>
         <p>ベルーナドームのライブ演出をマインクラフトで再現する際のポイントをまとめました。</p>
         
+        <h3>1. ステージ構成の再現</h3>
+        <ul>
+            <li><strong>メインステージ:</strong> 30×20ブロック（基本サイズ）</li>
+            <li><strong>センターステージ:</strong> 円形15×15ブロック or 四角形10×10ブロック</li>
+            <li><strong>花道:</strong> 幅5ブロック×長さ40ブロック（十字型も可）</li>
+            <li><strong>バックステージ:</strong> 15×10ブロック</li>
+            <li><strong>外周通路:</strong> 幅3ブロック（トロッコレール設置）</li>
+            <li><strong>高さ:</strong> 最低50ブロック（演出装置の設置スペース確保）</li>
+        </ul>
+
+        <h3>2. 移動ギミックの実装</h3>
         <div class="minecraft-tips">
             <div class="tip-card">
-                <h4>ステージ構成</h4>
+                <h4>トロッコシステム</h4>
                 <ul>
-                    <li>メインステージ: 30×20ブロック</li>
-                    <li>花道: 幅5ブロック×長さ40ブロック</li>
-                    <li>サブステージ: 15×10ブロック</li>
-                    <li>高さ: 最低15ブロック確保</li>
+                    <li>パワードレール + レッドストーン</li>
+                    <li>外周一周ルートの設計</li>
+                    <li>乗降ステーションの設置</li>
+                    <li>速度調整機構の実装</li>
                 </ul>
             </div>
             
             <div class="tip-card">
-                <h4>特殊効果の再現</h4>
+                <h4>ムービングステージ</h4>
                 <ul>
-                    <li>レーザー: ビーコン + 色付きガラス</li>
-                    <li>炎演出: ネザーラック + 火</li>
-                    <li>花火: ファイヤーワーク</li>
-                    <li>照明: グロウストーン/シーランタン</li>
+                    <li>コマンドブロック + /tp</li>
+                    <li>スライムブロック + ピストン</li>
+                    <li>エリトラ飛行エリア</li>
+                    <li>透明化ポーションNPC</li>
                 </ul>
             </div>
             
             <div class="tip-card">
-                <h4>可動ギミック</h4>
+                <h4>ワイヤーアクション</h4>
                 <ul>
-                    <li>昇降装置: ピストン + スライムブロック</li>
-                    <li>回転ステージ: レッドストーン回路</li>
-                    <li>トロッコ演出: パワードレール</li>
-                    <li>自動ドア: 感圧板 + ピストンドア</li>
+                    <li>エリトラ + 花火ロケット</li>
+                    <li>スローフォーリング効果</li>
+                    <li>浮遊ポーション活用</li>
+                    <li>リード + 透明モブ</li>
                 </ul>
             </div>
         </div>
-        
-        <h3>推奨MOD/プラグイン</h3>
+
+        <h3>3. 観客参加型要素</h3>
+        <div class="minecraft-tips">
+            <div class="tip-card">
+                <h4>ペンライト演出</h4>
+                <ul>
+                    <li>発光するアイテム配布</li>
+                    <li>色付きガラス + 光源</li>
+                    <li>ビーコンの色変更</li>
+                    <li>コマンドで一斉制御</li>
+                </ul>
+            </div>
+            
+            <div class="tip-card">
+                <h4>コール＆レスポンス</h4>
+                <ul>
+                    <li>チャット機能活用</li>
+                    <li>音符ブロック連動</li>
+                    <li>タイミング表示板</li>
+                    <li>パーティクル演出</li>
+                </ul>
+            </div>
+            
+            <div class="tip-card">
+                <h4>ファンサービス</h4>
+                <ul>
+                    <li>NPCとの対話機能</li>
+                    <li>アイテム交換システム</li>
+                    <li>写真撮影スポット</li>
+                    <li>サイン配布機構</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>4. 特殊効果の再現</h3>
+        <div class="minecraft-tips">
+            <div class="tip-card">
+                <h4>照明効果</h4>
+                <ul>
+                    <li>レッドストーンランプ</li>
+                    <li>シーランタン + ピストン</li>
+                    <li>ビーコン（レーザー代替）</li>
+                    <li>グロウストーン埋め込み</li>
+                </ul>
+            </div>
+            
+            <div class="tip-card">
+                <h4>炎・火柱演出</h4>
+                <ul>
+                    <li>ネザーラック + 火</li>
+                    <li>ファイヤーチャージ発射</li>
+                    <li>キャンプファイア活用</li>
+                    <li>溶岩流（安全距離確保）</li>
+                </ul>
+            </div>
+            
+            <div class="tip-card">
+                <h4>パーティクル演出</h4>
+                <ul>
+                    <li>花火（各種カスタム）</li>
+                    <li>/particle コマンド</li>
+                    <li>ポーション効果活用</li>
+                    <li>エンドロッド装飾</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3>5. 推奨MOD/プラグイン</h3>
         <ul>
-            <li><strong>Create MOD</strong>: 複雑な可動装置の作成</li>
-            <li><strong>LittleTiles</strong>: 細かいディテールの表現</li>
-            <li><strong>Chisel & Bits</strong>: 装飾の精密化</li>
-            <li><strong>Dynamic Lights</strong>: リアルな照明効果</li>
+            <li><strong>Create MOD:</strong> 複雑な可動装置の作成（ムービングステージ等）</li>
+            <li><strong>LittleTiles:</strong> 細かいディテールの表現（座席、装飾）</li>
+            <li><strong>Chisel & Bits:</strong> 装飾の精密化</li>
+            <li><strong>Dynamic Lights:</strong> リアルな照明効果</li>
+            <li><strong>CustomNPCs:</strong> 演者NPCの作成</li>
+            <li><strong>MusicCraft:</strong> BGM・SE再生システム</li>
+        </ul>
+
+        <h3>6. 空間設計のポイント</h3>
+        <ul>
+            <li><strong>360度観覧設計:</strong> どの位置からも楽しめる配置</li>
+            <li><strong>視認性の確保:</strong> 後方席でも見やすい高低差設計</li>
+            <li><strong>「会場全体がステージ」:</strong> 外周や天井も活用</li>
+            <li><strong>動線設計:</strong> 観客の移動を考慮した通路配置</li>
+            <li><strong>安全対策:</strong> 落下防止、炎からの距離確保</li>
         </ul>
     </div>
 
@@ -313,8 +563,9 @@
         <h3>スケール設定</h3>
         <ul>
             <li>実際のベルーナドーム: 直径約180m → マイクラ: 180ブロック推奨</li>
+            <li>観客収容: 約30,000人 → 座席ブロック配置で再現</li>
             <li>天井高: 最低50ブロック（演出装置の設置スペース確保）</li>
-            <li>観客席: 段差2ブロックずつで配置</li>
+            <li>観客席: 段差2ブロックずつで配置（視認性確保）</li>
         </ul>
         
         <h3>パフォーマンス対策</h3>
@@ -322,6 +573,15 @@
             <li>エンティティ数の制限（ラグ防止）</li>
             <li>レッドストーン回路の最適化</li>
             <li>チャンク読み込み範囲の考慮</li>
+            <li>パーティクル効果の適度な使用</li>
+        </ul>
+
+        <h3>マルチプレイ対応</h3>
+        <ul>
+            <li>同時接続人数を考慮した設計</li>
+            <li>観客席の十分な確保</li>
+            <li>ラグを考慮したギミック設計</li>
+            <li>チーム分けシステムの実装</li>
         </ul>
     </div>
 
